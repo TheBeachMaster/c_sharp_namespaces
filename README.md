@@ -11,3 +11,4 @@
 
 ```bash 
 <app_directory>$ dotnet run
+```
