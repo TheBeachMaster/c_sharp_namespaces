@@ -5,17 +5,8 @@ using c_sharp_namespaces.test;
 
 namespace c_sharp_namespaces
 {
-    enum Classes
-    {
-        Test,
-        App
-    }
     class Program
     {
-        Classes testClass = Classes.Test;
-        Classes appClass = Classes.App;
-
-        
         static void Main(string[] args)
         {
             Type appType = typeof(App);
@@ -24,7 +15,16 @@ namespace c_sharp_namespaces
             PropertyInfo[] pubProp = pubType.GetProperties();
             Console.WriteLine("App Namespace: " + appType.Namespace);
             Console.WriteLine("Publisher Namespace: " + pubType.Namespace);
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("App Property Info");
+            foreach (PropertyInfo pInfo in appProp)
+            {
+                Console.WriteLine(pInfo);
+            }
+            Console.WriteLine("App Publisher Info");
+            foreach (PropertyInfo pInfo in pubProp)
+            {
+                Console.WriteLine(pInfo);
+            }
             Console.ReadLine();
         }
     }
